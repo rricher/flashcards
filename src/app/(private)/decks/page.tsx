@@ -25,19 +25,17 @@ export default async function Page() {
         </Button>
       </div>
       {decks.length > 0 ? (
-        <div className="grid gap-4 grid-cols-[repeate(auto-fill,minmax(400px,1fr))]">
+        <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
           {decks.map((deck) => (
-            <DeckCard key={deck.id}>
-              <Link key={deck.id} href={`/decks/${deck.id}`}>
-                <a className="p-4 bg-card rounded-md shadow-md flex gap-4 items-center">
-                  <CreditCard className="size-16" />
-                  <div>
-                    <h2 className="text-lg font-semibold">{deck.name}</h2>
-                    <p className="text-sm text-neutral-500">Created {new Date(deck.createdAt).toLocaleDateString()}</p>
-                  </div>
-                </a>
+            <div key={deck.id}>
+              <Link key={deck.id} href={`/decks/${deck.id}`} className="p-4 bg-card rounded-md shadow-md flex gap-4 items-center">
+                <CreditCard className="size-16" />
+                <div>
+                  <h2 className="text-lg font-semibold">{deck.name}</h2>
+                  <p className="text-sm text-neutral-500">Created {new Date(deck.createdAt).toLocaleDateString()}</p>
+                </div>
               </Link>
-            </DeckCard>
+            </div>
           ))}
         </div>
       ) : (
@@ -55,16 +53,15 @@ export default async function Page() {
   )
 }
 
-type DeckCardProps = {
-  id: string
-  name: string
-  clerkUserId: string
-}
+// type DeckCardProps = {
+//   id: string
+//   name: string
+//   clerkUserId: string
+// }
 
-function DeckCard({ id, name, clerkUserId }: DeckCardProps) {
-  return (
-    <div className="bg-card rounded-md shadow-md">
-      {deck}
-    </div>
-  );
-}
+// function DeckCard({ id, name, clerkUserId }: DeckCardProps) {
+//   return (
+//     <div className="bg-card rounded-md shadow-md">
+//     </div>
+//   );
+// }

@@ -12,8 +12,8 @@ export const DeckTable = pgTable(
   "decks",
   {
     id,
-    name: t.text(),
-    clerkUserId: t.text("clerkUserId").notNull().unique(),
+    name: t.text().notNull(),
+    clerkUserId: t.text("clerkUserId").notNull(),
     ...timestamps,
   },
   (table) => [t.index("clerkUserIdIndex").on(table.clerkUserId)]

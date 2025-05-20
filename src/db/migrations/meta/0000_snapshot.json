@@ -1,5 +1,5 @@
 {
-  "id": "79358915-4cbb-434b-ac6d-3a986e644bc4",
+  "id": "8f80af14-b124-4f70-bb9d-37a6848ca5b9",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -19,7 +19,7 @@
           "name": "name",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "clerkUserId": {
           "name": "clerkUserId",
@@ -61,15 +61,7 @@
       },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "decks_clerkUserId_unique": {
-          "name": "decks_clerkUserId_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "clerkUserId"
-          ]
-        }
-      },
+      "uniqueConstraints": {},
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
